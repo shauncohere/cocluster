@@ -131,8 +131,7 @@ if uploaded_file is not None:
             df['y'] = umap_embeds[:,1]
             st.session_state['df']=df
             st.session_state['embeds']=embeds
-
-clusters= st.slider("Cluster", min_value=0, max_value=50)
+clusters= st.slider("Number of Clusters(You must upload a file and embed column before clustering)", min_value=0, max_value=50)
 if (clusters != 0):
     df=st.session_state['df']
     embeds=st.session_state['embeds']
