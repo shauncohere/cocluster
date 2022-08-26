@@ -101,7 +101,7 @@ def embeddings(df,column):
     embeds = []
     for chat in df[column]:
         output = co.embed(
-                    model='small',
+                    model='large',
                     texts=[chat])
         embeds += output.embeddings
     return(embeds)
@@ -136,5 +136,5 @@ if (clusters != 0):
     df=st.session_state['df']
     embeds=st.session_state['embeds']
     column=st.session_state['column']
-    keywords(df,embeds,clusters,column)
+    df=keywords(df,embeds,clusters,column)
     chart(df,clusters,column)
